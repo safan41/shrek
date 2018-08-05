@@ -4,6 +4,7 @@ import re
 import praw
 from discord.ext import commands
 import time
+# discord.py>=0.16.12
 link = ["http://knowyourmeme.com/memes/"]
 TOKEN = 'NDU0MDE3ODIwODUwOTEzMjg4.Dfnk9A._L7ChlbseOleX9vp-9ISUDCamvs'
 def remove_trash(index: list) -> list:
