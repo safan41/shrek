@@ -1,5 +1,6 @@
 import discord
 from urllib.request import urlopen
+from bs4 import BeautifulSoup
 import re
 import praw
 from discord.ext import commands
