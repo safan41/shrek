@@ -1,3 +1,4 @@
+git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
 aiohttp==3.3.2
 async-timeout==3.0.0
 attrs==18.2.0
@@ -7,7 +8,6 @@ blinker==1.4
 certifi==2018.8.24
 chardet==3.0.4
 click==6.7
-git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice]
 fake-useragent==0.1.10
 httplib2==0.9.2
 mpmath==1.0.0
@@ -21,7 +21,6 @@ py-expression-eval==0.3.4
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycrypto==2.6.1
-pygobject==3.26.1
 PyJWT==1.5.3
 pyOpenSSL==17.5.0
 pyparsing==2.2.0
