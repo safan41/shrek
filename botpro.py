@@ -1,6 +1,7 @@
 import discord
 from urllib.request import urlopen
 import re
+import os
 import praw
 from discord.ext import commands
 import computer
@@ -186,5 +187,5 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-bot.run('TOKEN')
+bot.run(os.environ['TOKEN'])
 # await client.send_message(message.channel, 'Error - No meme stats found for "' + mymsg + '"') if anything goes worng
