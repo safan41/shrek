@@ -7,6 +7,7 @@ from discord.ext import commands
 import computer
 import time, random
 import meme as me
+import wolframalpha
 # discord.py>=0.16.12
 def remove_trash(index: list) -> list:
     if not isinstance(index, list):
@@ -27,6 +28,7 @@ reddit = praw.Reddit(client_id='FvsbeaJuTBqqvA',
                      user_agent='testscript by /u/fakebot3',
                      username='pabloitoman')
 client = discord.Client()
+wolf = wolframalpha.Client(os.environ['WOLFRAM'])
 bot = commands.Bot(command_prefix='?', description='A bot that greets the user back.')
 bot.remove_command('help')
 
@@ -175,6 +177,19 @@ async def meme(ctx, *, message: str):
 async def meme_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send("Please specify a meme")
+
+@bot.command()
+async def alpha(ctx, *, message: str):
+    try:
+        res = wolf.query(message)
+        await ctx.send(next(res.results).text)   
+    except:
+        await ctx.send("The requested query couldn't be parsed. Please make sure your query makes sense")
+@alpha.error
+async def alpha_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("Please add a query")
+
 @client.event
 async def on_message(message):
     # we do not want the bot to reply to itself
